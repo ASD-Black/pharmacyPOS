@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="523553cd-6887-43ae-afc0-8aaaf7421392">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="invo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     `bill` bill INNER JOIN `bill_items` bill_items ON bill.`bill_id` = bill_items.`bill_id`
+     INNER JOIN `customers` customers ON bill.`cust_id` = customers.`cust_id`
+     INNER JOIN `employee` employee ON bill.`e_id` = employee.`e_id`
+WHERE
+     bill.`bill_id` = $P{invo}]]>
+	</queryString>
+	<field name="bill_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bill_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bill_dis" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cust_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="e_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="net_amount" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="setle_days" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="days" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="itm_count" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_ex_bonous" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="advancedCode" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="advAmount" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="invoiceType" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="recevingDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="creditCodeChequeCode" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="grangAmount" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bill_time" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bill_item_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pack_size" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qty" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="free" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="w_price" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dis" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="r_price" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="exp_date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="value" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="costValue" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cashBalID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address_nile_1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address_nile_2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="state" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contactNo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reg_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="f_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="l_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="salse">
+		<groupExpression><![CDATA[$F{bill_id}]]></groupExpression>
+		<groupFooter>
+			<band height="225">
+				<line>
+					<reportElement x="29" y="175" width="100" height="1" uuid="e0ab41c5-f658-46ca-bf1d-2847184e9afa"/>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement x="2" y="97" width="482" height="17" uuid="87edf81d-98fd-4fb9-8494-66811bd4a3ac"/>
+					<textElement>
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<text><![CDATA[Repairs or replacement necessitated by such causes not covered by the warranty are subject to charges for labour time and material.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="370" y="27" width="71" height="20" uuid="e86b8f95-ad6b-4d6a-96d8-34dfe94126e1"/>
+					<textElement>
+						<font fontName="Calibri" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Discount (Rs)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="69" width="341" height="17" uuid="da26847c-bc9b-4289-af30-258e4bbf6cce"/>
+					<textElement>
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<text><![CDATA[negligence misuse improper operations, power fluctuation, lighting or other natural disaster]]></text>
+				</staticText>
+				<line>
+					<reportElement x="362" y="72" width="193" height="1" uuid="91d30685-f6c0-4dc0-9779-96fe93a8b614"/>
+				</line>
+				<staticText>
+					<reportElement x="370" y="7" width="36" height="20" uuid="fd6083b4-625c-4d21-8e1f-c81dea748118"/>
+					<textElement>
+						<font fontName="Calibri" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="146" y="186" width="171" height="10" uuid="1efa1fe2-5465-409d-9922-cdd137da546a"/>
+					<textElement>
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[Goods Received In Good Conditions and correct Quantity]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="136" y="83" width="196" height="17" uuid="a343ce15-1517-4d30-bcc6-c6f075c3781d"/>
+					<textElement>
+						<font fontName="Calibri" size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BURN MARK, PHYSICAL DAMAGE AND CORROSION]]></text>
+				</staticText>
+				<line>
+					<reportElement x="362" y="47" width="192" height="1" uuid="f8864e6f-9927-4ea3-97fb-05ab0d1d3d4c"/>
+				</line>
+				<staticText>
+					<reportElement x="52" y="174" width="53" height="20" uuid="909fbbac-a1f3-4d1f-9ad7-dc6f61e9ec2c"/>
+					<textElement>
+						<font fontName="Calibri"/>
+					</textElement>
+					<text><![CDATA[Prepared By]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="111" width="482" height="17" uuid="6cd67589-daee-4490-9019-6de5d2511d74"/>
+					<textElement>
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<text><![CDATA[Submit this invoice for warranty claim.Goods sold are not returnable under any circumstances.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="370" y="50" width="71" height="20" uuid="f84f9c25-56f7-4d1e-99b2-c838c4abdebc"/>
+					<textElement>
+						<font fontName="Calibri" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Net Amount]]></text>
+				</staticText>
+				<line>
+					<reportElement x="171" y="175" width="100" height="1" uuid="c2ecb9dd-6e72-4864-bbf7-d1afdf66cffe"/>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="362" y="68" width="193" height="1" uuid="8fb86f2b-546d-4374-88e5-5bdb459eb9bc"/>
+				</line>
+				<staticText>
+					<reportElement x="329" y="83" width="94" height="17" uuid="16de6515-384b-45ef-8b1d-7f6b62c7c1eb"/>
+					<textElement>
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<text><![CDATA[are not under warranty.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="41" width="315" height="17" uuid="f4e082a2-2cbe-49d8-9f5a-0f7e23a5a316"/>
+					<textElement>
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<text><![CDATA[Warranty accepted only within particular days, mantioned in this invoce.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="55" width="349" height="17" uuid="2f54c228-f496-47ab-acbd-df3a6fafaf3a"/>
+					<textElement>
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<text><![CDATA[Warranty covers only manufacture defects. Dammage or defects due to other causes such as]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="2" y="83" width="135" height="17" uuid="3dec83b2-34d4-4b38-9efe-e0f85a2facde"/>
+					<textElement>
+						<font fontName="Calibri" size="9" isBold="false"/>
+					</textElement>
+					<text><![CDATA[sabotage or accident and items with ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="5" width="87" height="20" uuid="77b96996-515f-4cc4-b612-e20ef21215de"/>
+					<textElement>
+						<font fontName="Calibri" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Number Of Items   : ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="179" y="174" width="93" height="20" uuid="410486df-f382-4f87-ae88-bf4a173c22c7"/>
+					<textElement>
+						<font fontName="Calibri"/>
+					</textElement>
+					<text><![CDATA[Customer Signature]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="87" y="5" width="42" height="20" uuid="5a868a72-e2a3-4c2d-a291-97185726b2c2"/>
+					<textElement>
+						<font fontName="Calibri"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{itm_count}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="454" y="7" width="100" height="20" uuid="defbc210-3a23-4888-b65b-daa47cd5a238"/>
+					<textElement textAlignment="Right">
+						<font fontName="Calibri"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="454" y="27" width="100" height="20" uuid="ae29855a-b1ca-4a03-bccc-5bf99a74cef1"/>
+					<textElement textAlignment="Right">
+						<font fontName="Calibri"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{bill_dis}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="454" y="49" width="100" height="20" uuid="8ef726bd-5c5c-4458-92c3-7abba6e5d17a"/>
+					<textElement textAlignment="Right">
+						<font fontName="Calibri"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{net_amount}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="1" width="555" height="1" uuid="405924ad-2053-4cea-b667-a88da9701b33"/>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<pageHeader>
+		<band height="158" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="-20" width="595" height="166" uuid="1bb8f364-ea49-4634-a10c-7d7010714fa3"/>
+				<imageExpression><![CDATA["C:\\Program Files (x86)\\Magic Computer\\icon\\aaa.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="6" y="49" width="198" height="20" uuid="7400fb49-516f-42ff-a104-511a10a7d3bd"/>
+				<textElement>
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<text><![CDATA[No 72, Main Streat, Hettipola.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="59" width="150" height="20" uuid="8dcfaee2-2899-4f83-aafb-11da00dd7729"/>
+				<textElement>
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<text><![CDATA[Contact : Gayan - 077 7973477]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="-10" width="327" height="47" uuid="cbc02842-c236-47e4-8a52-7fdca7f22cbc"/>
+				<textElement>
+					<font fontName="Calibri" size="36" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Computer Solutions]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="70" width="93" height="20" uuid="ecb22370-0e16-435c-90e8-9d7440b81f83"/>
+				<textElement>
+					<font fontName="Calibri" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice No	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="89" width="93" height="20" uuid="87b57d6b-b1e3-4c87-95fc-bfbd9698d267"/>
+				<textElement>
+					<font fontName="Calibri" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice Date	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="13" width="248" height="44" uuid="6c1fedb6-29d9-4448-8731-86472c599ab0"/>
+				<textElement>
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MAGIC ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="49" width="162" height="27" uuid="92ee01f7-5672-4aa3-a505-cb73407c188d"/>
+				<textElement>
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALES INVOICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="69" width="150" height="20" uuid="1748c825-6a63-418d-b005-533fd94417f4"/>
+				<textElement>
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<text><![CDATA[Email : 72gayanranaweera@gmail.com ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="456" y="70" width="100" height="20" uuid="da9ae876-a469-43b7-8cb8-5fc90fb25815"/>
+				<textElement>
+					<font fontName="Calibri" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bill_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="89" width="100" height="20" uuid="787acfba-aa73-4ce0-9d75-1d35f7dd247f"/>
+				<textElement>
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bill_date}.toString()+" - " + $F{bill_time}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="125" width="52" height="20" uuid="30221c8a-1299-4908-b9a3-07a0a7e57f05"/>
+				<textElement>
+					<font fontName="Calibri" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address      :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="107" width="52" height="20" uuid="a57ddb18-c880-4564-9a05-060fb802bd8f"/>
+				<textElement>
+					<font fontName="Calibri" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="58" y="107" width="100" height="20" uuid="88b06a29-6918-4141-8d27-666a61ae9bae"/>
+				<textElement>
+					<font fontName="Calibri" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="58" y="126" width="279" height="20" uuid="a77c1e3a-afcd-42da-a497-b035327bb34a"/>
+				<textElement>
+					<font fontName="Calibri" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address_nile_1}+", "+$F{address_nile_2}+", "+$F{city}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="363" y="2" width="75" height="20" uuid="dfc662d4-c70b-4fbe-8ab5-633bb93ca53e"/>
+				<textElement>
+					<font fontName="Calibri" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Warranty (M)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="523" y="2" width="30" height="20" uuid="3fe3d6a6-4185-4133-90a2-56043c530e4e"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="2" width="55" height="20" uuid="8f8475d0-e387-4485-9719-7053753a003a"/>
+				<textElement>
+					<font fontName="Calibri" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="2" width="72" height="20" uuid="fe73fc49-7d9e-4598-a95d-fab9a578fb34"/>
+				<textElement>
+					<font fontName="Calibri" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="2" width="22" height="20" uuid="6ef91ddc-4e09-4c2c-a42f-41fa20a60a73"/>
+				<textElement>
+					<font fontName="Calibri" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="22" width="554" height="1" uuid="c42908be-ce52-4462-8780-d2a2a60e000f"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="6" y="0" width="100" height="20" uuid="09ff9056-c698-444f-99aa-f9e7a5a0ad77"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="120" y="0" width="241" height="20" uuid="02ca2ac5-1516-4d73-ae8c-6aaccbae45a8"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="37" height="20" uuid="2b7a17c8-125b-4d4b-9d38-d4168917bb90"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pack_size}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="0" width="22" height="20" uuid="4cbc56dd-ac9a-4a20-beb1-c0d25e99f8a3"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="0" width="81" height="20" uuid="9ebb4e87-fd9a-48a5-ac71-f1118061d97a"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_ex_bonous}>0 ?$F{value}:""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<image>
+				<reportElement x="-19" y="-32" width="594" height="86" uuid="c1dc3b9f-cb02-4d49-8584-e404205a0356"/>
+				<imageExpression><![CDATA["C:\\Program Files (x86)\\Magic Computer\\icon\\dddd.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="215" y="17" width="125" height="20" uuid="d61e99cb-b16e-4867-91e0-ae12e33b3a27"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<text><![CDATA[Thank You For Business With Us]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="435" y="17" width="80" height="20" uuid="f521ef91-3b47-48b1-9163-3ac2687af972"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="17" width="40" height="20" uuid="32d1d856-a34a-411f-83c6-b5a415b46934"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="7" y="15" width="100" height="20" uuid="1f0376a6-0347-4aa2-9f24-3b4743d25b62"/>
+				<textElement>
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="42" width="133" height="11" uuid="f6a7e3c3-c575-4bfa-a043-ec5deca78620"/>
+				<textElement>
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<text><![CDATA[ASD Software Solutions (0779255562)]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

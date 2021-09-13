@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e53865ff-92a3-43b6-b4d7-0b441682ac52">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     bill.`bill_id` AS bill_bill_id,
+     bill.`bill_date` AS bill_bill_date,
+     bill.`total` AS bill_total,
+     bill.`bill_dis` AS bill_bill_dis,
+     bill.`cust_id` AS bill_cust_id,
+     bill.`e_id` AS bill_e_id,
+     bill.`net_amount` AS bill_net_amount,
+     bill.`setle_days` AS bill_setle_days,
+     bill.`status` AS bill_status,
+     bill.`days` AS bill_days,
+     customers.`cust_id` AS customers_cust_id,
+     customers.`name` AS customers_name,
+     customers.`address_nile_1` AS customers_address_nile_1,
+     customers.`address_nile_2` AS customers_address_nile_2,
+     customers.`city` AS customers_city,
+     customers.`state` AS customers_state,
+     customers.`contactNo` AS customers_contactNo,
+     customers.`reg_date` AS customers_reg_date,
+     employee.`e_id` AS employee_e_id,
+     employee.`f_name` AS employee_f_name,
+     employee.`l_name` AS employee_l_name,
+     employee.`address` AS employee_address,
+     employee.`contactNo` AS employee_contactNo,
+     employee.`reg_date` AS employee_reg_date
+FROM
+     `customers` customers INNER JOIN `bill` bill ON customers.`cust_id` = bill.`cust_id`
+     INNER JOIN `employee` employee ON bill.`e_id` = employee.`e_id`]]>
+	</queryString>
+	<field name="bill_bill_id" class="java.lang.String"/>
+	<field name="bill_bill_date" class="java.lang.String"/>
+	<field name="bill_total" class="java.math.BigDecimal"/>
+	<field name="bill_bill_dis" class="java.lang.Integer"/>
+	<field name="bill_cust_id" class="java.lang.String"/>
+	<field name="bill_e_id" class="java.lang.String"/>
+	<field name="bill_net_amount" class="java.math.BigDecimal"/>
+	<field name="bill_setle_days" class="java.lang.Integer"/>
+	<field name="bill_status" class="java.lang.String"/>
+	<field name="bill_days" class="java.lang.Integer"/>
+	<field name="customers_cust_id" class="java.lang.String"/>
+	<field name="customers_name" class="java.lang.String"/>
+	<field name="customers_address_nile_1" class="java.lang.String"/>
+	<field name="customers_address_nile_2" class="java.lang.String"/>
+	<field name="customers_city" class="java.lang.String"/>
+	<field name="customers_state" class="java.lang.String"/>
+	<field name="customers_contactNo" class="java.lang.String"/>
+	<field name="customers_reg_date" class="java.sql.Date"/>
+	<field name="employee_e_id" class="java.lang.String"/>
+	<field name="employee_f_name" class="java.lang.String"/>
+	<field name="employee_l_name" class="java.lang.String"/>
+	<field name="employee_address" class="java.lang.String"/>
+	<field name="employee_contactNo" class="java.lang.String"/>
+	<field name="employee_reg_date" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

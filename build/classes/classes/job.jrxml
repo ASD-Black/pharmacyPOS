@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="51462e5c-9d90-43db-93d8-9358b1cface2">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="100"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="jobID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     job.`jobCode` AS job_jobCode,
+     job.`type` AS job_type,
+     job.`cust` AS job_cust,
+     job.`proccesor` AS job_proccesor,
+     job.`ram` AS job_ram,
+     job.`mb` AS job_mb,
+     job.`kb` AS job_kb,
+     job.`battery` AS job_battery,
+     job.`hdd` AS job_hdd,
+     job.`rom` AS job_rom,
+     job.`vga` AS job_vga,
+     job.`charger` AS job_charger,
+     job.`status` AS job_status,
+     job.`days` AS job_days,
+     job.`date` AS job_date,
+     job.`dis` AS job_dis,
+     job.`mobile` AS job_mobile
+FROM
+     `job` job
+WHERE
+     job.`jobCode` = $P{jobID}]]>
+	</queryString>
+	<field name="job_jobCode" class="java.lang.String"/>
+	<field name="job_type" class="java.lang.String"/>
+	<field name="job_cust" class="java.lang.String"/>
+	<field name="job_proccesor" class="java.lang.String"/>
+	<field name="job_ram" class="java.lang.String"/>
+	<field name="job_mb" class="java.lang.String"/>
+	<field name="job_kb" class="java.lang.String"/>
+	<field name="job_battery" class="java.lang.String"/>
+	<field name="job_hdd" class="java.lang.String"/>
+	<field name="job_rom" class="java.lang.String"/>
+	<field name="job_vga" class="java.lang.String"/>
+	<field name="job_charger" class="java.lang.String"/>
+	<field name="job_status" class="java.lang.String"/>
+	<field name="job_days" class="java.lang.Integer"/>
+	<field name="job_date" class="java.lang.String"/>
+	<field name="job_dis" class="java.lang.String"/>
+	<field name="job_mobile" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="202" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="68" y="121" width="103" height="18" uuid="2ff3cb06-3cf6-4b34-90d5-b6e3e50007b6"/>
+				<textElement>
+					<font fontName="Calibri" size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_jobCode}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="68" y="141" width="139" height="18" uuid="0f4c7779-d5f5-4026-a347-925275dbcfd7"/>
+				<textElement>
+					<font fontName="Calibri" size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_cust}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="290" y="158" width="89" height="18" uuid="608aaa4c-be9a-4c24-991f-b9241a02ae36"/>
+				<textElement>
+					<font fontName="Calibri" size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="-12" y="140" width="75" height="20" forecolor="#000000" uuid="11e94edd-68a7-4b89-abf9-70e975b92313"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Customer :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="-20" y="121" width="83" height="20" forecolor="#000000" uuid="581f9de9-af81-495b-8073-4992e7e8d236"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Job ID :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="286" y="138" width="93" height="18" uuid="e1e2bdac-fd86-4f5e-aa13-300798424aa9"/>
+				<textElement>
+					<font fontName="Calibri" size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="226" y="158" width="59" height="20" forecolor="#000000" uuid="51e58d71-6f92-4ce8-a029-0c241e94e6f9"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Type :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="226" y="138" width="60" height="20" forecolor="#000000" uuid="8f7508e5-fa78-4ea0-8523-bc62369548b2"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Job Date :]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="2" y="193" width="378" height="1" uuid="b992bf72-a18f-439f-89eb-6ee894c2779f"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="-13" y="160" width="75" height="20" forecolor="#000000" uuid="8348bd47-fdda-43cc-8758-e3330ff58a33"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Phone :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="68" y="161" width="100" height="20" uuid="ace6c2e1-85ea-4057-8fef-d5025571ba57"/>
+				<textElement>
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_mobile}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="267" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="120" y="92" width="201" height="18" uuid="eb5dbcf5-e6bd-47b6-ba54-30d0c3eae469"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Proccesor :  "+$F{job_proccesor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="43" y="112" width="132" height="20" forecolor="#000000" uuid="6dde436d-d0f1-4fd8-a110-395c153c1e78"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ram :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="182" y="112" width="139" height="18" uuid="33ec705c-26c2-4153-a841-e2b61b9a45be"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_ram}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="43" y="132" width="132" height="20" forecolor="#000000" uuid="882e1367-4778-453f-9109-68b501745845"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Key Board :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="182" y="132" width="139" height="18" uuid="d16feb6a-9f5b-42b5-a124-c0d10530d5c7"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_kb}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="43" y="152" width="132" height="20" forecolor="#000000" uuid="3cc8ab5f-4633-4a60-b06e-cccd7b6fa64c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Battery :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="182" y="152" width="139" height="18" uuid="6f62dd8f-ae8a-4c5f-ab5b-1a1ccac6cc15"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_battery}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="43" y="172" width="132" height="20" forecolor="#000000" uuid="3f6f70e8-8ff9-4c1c-9fe1-ac10742fc0d5"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HDD :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="182" y="172" width="139" height="18" uuid="7443bf5c-0e66-4f99-b4a1-4f66928aed8a"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_hdd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="43" y="192" width="132" height="20" forecolor="#000000" uuid="a31548bc-10f0-47f7-aa63-c183b6b6af9c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rom :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="182" y="192" width="139" height="18" uuid="a002a245-070d-47cb-832a-466aae2517e2"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_rom}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="43" y="212" width="132" height="20" forecolor="#000000" uuid="c2fa6413-73ae-436e-b2a2-4522554ee2e8"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Charger :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="182" y="212" width="139" height="18" uuid="ea916993-b78e-459a-99f3-a97325aadc7f"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_charger}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="44" y="62" width="132" height="20" forecolor="#000000" uuid="28b54f4d-3243-45ce-9726-2abc7c008b92"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discription :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="182" y="62" width="138" height="18" uuid="42eacd71-90e9-4fd7-ae2f-7436353878dc"/>
+				<textElement>
+					<font fontName="Calibri" size="12" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_dis}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

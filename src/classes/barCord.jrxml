@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" columnCount="4" pageWidth="595" pageHeight="842" columnWidth="138" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="59fd7ee2-a191-4721-8af5-cd13e7e02ca4">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="mainBarcodeID" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     `a` a
+WHERE
+     a.`mb` = $P{mainBarcodeID}]]>
+	</queryString>
+	<field name="id1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="itmCode1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="model" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rPrice" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="34" y="10" width="73" height="12" uuid="9d4eaa51-bd67-422a-92fe-5e29f14a1548"/>
+				<textElement>
+					<font fontName="Calibri" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rPrice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="39" width="73" height="18" uuid="e69add81-f4e2-4f18-8a5b-3f88c04e2704"/>
+				<textElement>
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itmCode1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="10" width="29" height="12" uuid="d1c0272f-b55a-43ff-ae09-df5340c0e2ef"/>
+				<textElement>
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<text><![CDATA[Rs :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="39" width="45" height="18" uuid="6dcafcd1-0470-4627-960f-8d4063879df3"/>
+				<textElement>
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<text><![CDATA[S/N ]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="4" y="22" width="122" height="18" uuid="8d0a2ae6-8e76-455f-a7ef-7d0a2a4fadaf"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39 (Extended)" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{itmCode1}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>
